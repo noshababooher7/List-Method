@@ -108,4 +108,48 @@ void main() {
   // name4.removeWhere((a) => a < 10);
   name4.retainWhere((a) => a < 10);
   print(name4);
+  
+//  firstwhere list method    ,,,as ka matlab ke wo frist number print karo ju 3 se phale ata he
+  List<int> number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  int result = number.firstWhere((e) => e < 3);
+  print(result);
+
+  //lastwhere  method     as ka matlab ke wo last number print karo ju 3 se greater ho
+  List<int> numberss = [1, 3, 2, 4, 5, 5, 6, 7, 8, 9];
+  int results = numberss.lastWhere((element) => element > 3);
+  print(results);
+
+  // where list method   ,, as me odd ya even number  ka mallume kar sakti he
+  //even number
+  Iterable<int> evennumber = number.where((element) => element % 2 == 0);
+  print(evennumber);
+  //oddnumber
+  Iterable<int> oddnumber = number.where((element) => element % 2 == 1);
+  print(oddnumber);
+
+// fold list method
+  List<int> number1 = [1, 2, 3, 4, 5];
+  int result2 =
+      number1.fold(4, (previousValue, element) => previousValue + element);
+  print(result2);
+
+  // sublist list method   0       1       2       3
+  List<String> grocery = ["bread", "eggs", "milk", "butter"];
+  grocery.add("sugar");
+  print(grocery);
+  print(grocery.sublist(0, 2));
+
+  List<int> marks = [50, 40, 10];
+  print(marks.sublist(2));
+
+  // list method shuffle();   is me  value   badalte rahte he
+
+  List<String> fruit = ["mango", "banana", "apple", "grappes"];
+  print(fruit);
+  fruit.shuffle();
+  print(fruit);
+     // reduce method 
+  List<int> salary = [10000, 20000, 30000];
+  final totalsalary = salary.reduce((value, element) => value + element);
+  print(totalsalary);
 }
